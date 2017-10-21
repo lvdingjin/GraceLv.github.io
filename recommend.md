@@ -16,10 +16,10 @@ update: 2017-10-22
 <br/>
 
 + 音乐
-  - [李志](http://music.163.com/#/artist?id=3681)：没有听过一场李志现场的人生不完整
-  - [罗大佑](http://music.163.com/#/artist?id=3686)：真正意义上的诗人
-  - [李宗盛](http://music.163.com/#/artist?id=3683)：年少不听李宗盛，听懂已是不惑年
-  - [筠子](http://music.163.com/#/artist?id=8145)：美丽世界的孤儿
+  - [李志](http://music.163.com/#/artist?id=3681)
+  - [罗大佑](http://music.163.com/#/artist?id=3686)
+  - [李宗盛](http://music.163.com/#/artist?id=3683)
+  - [筠子](http://music.163.com/#/artist?id=8145)
 
 <br/>
 
