@@ -7,15 +7,11 @@ update: 2017-10-22
 
 
 + 前端社区
-    - [SegmentFault](https://segmentfault.com/)
-    
-    - [Stack Overflow](https://stackoverflow.com/)
-    
-    - [稀土掘金](https://juejin.im/)
-    
-    - [简书](http://www.jianshu.com/)
-    
-    - [Talking Coder](https://www.talkingcoder.com/)
+  - [SegmentFault](https://segmentfault.com/)
+  - [Stack Overflow](https://stackoverflow.com/)
+  - [稀土掘金](https://juejin.im/)
+  - [简书](http://www.jianshu.com/)
+  - [Talking Coder](https://www.talkingcoder.com/)
 
 <br/>
 
