@@ -16,10 +16,10 @@ update: 2017-10-22
 <br/>
 
 + 音乐
-  - [李志](http://music.163.com/#/artist?id=3681)
-  - [罗大佑](http://music.163.com/#/artist?id=3686)
-  - [李宗盛](http://music.163.com/#/artist?id=3683)
-  - [筠子](http://music.163.com/#/artist?id=8145)
+- [李志](http://music.163.com/#/artist?id=3681)
+- [罗大佑](http://music.163.com/#/artist?id=3686)
+- [李宗盛](http://music.163.com/#/artist?id=3683)
+- [筠子](http://music.163.com/#/artist?id=8145)
 
 <br/>
 
