@@ -1,4 +1,4 @@
-# GraceLv.github.io
+# lvdingjin.github.io
 个人博客
 
-See my [blog](https://lvdingjin.github.io/GraceLv.github.io/).
+See my [blog](https://lvdingjin.github.io).
