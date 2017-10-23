@@ -4,10 +4,10 @@ title: "React项目场景之：点击document任意节点（除指定区域外�
 description: ""
 category: tech
 tags: []
-modify: 2017-10-22 15:46
+modify: 2017-10-22 15:46:19
 ---
 
-update: 2017-10-22
+update: 2017-10-23
 
 
 我们常常会遇到这样一个场景：打开一个fix的弹层，需要在用户点击除了它本身以外的任意位置时，关闭弹层。
