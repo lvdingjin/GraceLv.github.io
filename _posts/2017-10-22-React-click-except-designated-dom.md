@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "React项目场景之：点击document任意节点（除指定区域外）处理状态"
+title: "React项目场景：点击document任意节点关闭弹层"
 description: ""
 category: tech
 tags: []
@@ -73,5 +73,5 @@ rc-util是一个专为React组件提供一些通用工具的插件，我们可�
   ```
   
   
-以上，完成在React项目中实现点击document任意节点（除指定区域外）隐藏弹层的效果。
+以上，完成在React项目中实现点击document任意节点（除指定区域外）关闭弹层的效果。
 
