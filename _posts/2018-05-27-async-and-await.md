@@ -10,7 +10,7 @@ modify: 2018-05-27 17:25:29
 update: 2018-05-27
 
 
-故事要从一道今日头条的笔试题说起～ </br>
+故事要从一道今日头条的笔试题说起～ <br>
 题目来源：[https://juejin.im/post/5b03e79951882542891913e8]()
 
 ```
@@ -37,7 +37,8 @@ console.log('script end')
 ```
 求打印结果是什么？
 
-相信是个前端都知道啦，这道题目考的就是js里面的事件循环和回调队列咯～</br>今天题主假设看客都已经了解了setTimeout是宏任务会在最后执行的前提（因为它不是今天要讨论的重点），我们主要来讲讲**promise**、**async**和**await**之间的关系。
+相信是个前端都知道啦，这道题目考的就是js里面的事件循环和回调队列咯～<br>
+今天题主假设看客都已经了解了setTimeout是宏任务会在最后执行的前提（因为它不是今天要讨论的重点），我们主要来讲讲**promise**、**async**和**await**之间的关系。
 
 先上正确答案：
 
@@ -75,7 +76,7 @@ MDN是这样描述await的：
 > 
 > 当调用一个 async 函数时，会返回一个 Promise 对象。当这个 async 函数返回一个值时，Promise 的 resolve 方法会负责传递这个值；当 async 函数抛出异常时，Promise 的 reject 方法也会传递这个异常值。
 
-所以你现在知道咯，使用 **async** 定义的函数，当它被调用时，它返回的其实是一个Promise对象。</br>
+所以你现在知道咯，使用 **async** 定义的函数，当它被调用时，它返回的其实是一个Promise对象。<br>
 我们再来看看 **await** 表达式执行会返回什么值。
 
 ### await ###
@@ -119,13 +120,13 @@ MDN是这样描述await的：
 
 理解了这些，自然就明白了为什么答案是这样（答出笔试题还要分析给面试官原因哈哈哈）～
 
-关于**调用栈、事件循环、任务队列**可以[点这里](https://github.com/xitu/gold-miner/blob/master/TODO/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with.md)了解更详细的描述。</br>
+关于**调用栈、事件循环、任务队列**可以[点这里](https://github.com/xitu/gold-miner/blob/master/TODO/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with.md)了解更详细的描述。<br>
 为了方便大家直接贴图:
 ![tupian](https://camo.githubusercontent.com/bd3cc88e02a70dbd46694ef8ad2f0b5741725d7e/68747470733a2f2f63646e2d696d616765732d312e6d656469756d2e636f6d2f6d61782f3830302f312a4641394e47784e42362d76316f4932714745746c52512e706e67)
 
 关于async和await的执行顺序[这里](https://segmentfault.com/a/1190000011296839)也有很详细的分析可以参考～
 
-资料参考：</br>
-[https://segmentfault.com/a/1190000011296839]()</br>
+资料参考：<br>
+[https://segmentfault.com/a/1190000011296839]()<br>
 [https://github.com/xitu/gold-miner/blob/master/TODO/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with.md]()
 
