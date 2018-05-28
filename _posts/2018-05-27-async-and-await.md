@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "promise、async和await之间那点事"
+title: "promise、async和await之执行顺序的那点事"
 description: ""
 category: tech
 tags: []
@@ -64,12 +64,35 @@ script end
 promise2
 setTimeout
 ```
-为什么这样认为呢？因为我们（粗浅地）知道await之后的语句会等await表达式中的函数执行完得到结果后，才会继续执行（可以看作是一个同步的等待）。
+为什么这样认为呢？因为我们（粗浅地）知道await之后的语句会等await表达式中的函数执行完得到结果后，才会继续执行。
 
-MDN是这样描述await的：
+**MDN**是这样描述await的：
 > async 函数中可能会有 await 表达式，这会使 async 函数暂停执行，等待表达式中的 Promise 解析完成后继续执行 async 函数并返回解决结果。
 
-这话是没错，但是当场景变得复杂（很多promise啊async啊结合一起使用）时，光知道这个概念就有点不够用了，需要了解更多的细节和深入理解其中的概念。
+会认为输出结果是以上的样子，是因为没有真正理解这句话的含义。
+
+阮一峰老师的解释我觉得更容易理解：
+> async 函数返回一个 Promise 对象，当函数执行的时候，一旦遇到 await 就会先返回，等到触发的异步操作完成，再接着执行函数体内后面的语句。
+
+对啦就是这样，MDN描述的暂停执行，实际上是**让出了线程（跳出async函数体）**然后继续执行后面的脚本的。这样一来我们就明白了，所以我们再看看上面那道题，按照这样描述那么他的输出结果就应该是：
+
+```
+script start
+async1 start
+async2
+promise1
+script end
+async1 end
+promise2
+setTimeout
+```
+好像哪里不太对？对比控制台输出的正确结果，咦～有两句输出是不一样的呀！！
+
+```
+async1 end
+promise2
+```
+为什么会这样呢？这也是这道题目最难理解的一个地方。要搞明白这个事情，我们需要先来回顾一些概念：
 
 ### async ###
 > async function 声明将定义一个返回 AsyncFunction 对象的异步函数。
@@ -88,11 +111,11 @@ MDN是这样描述await的：
 
 所以，当await操作符后面的表达式是一个Promise的时候，它的返回值，实际上就是Promise的回调函数resolve的参数。
 
-明白了这两个事情后，我还要再啰嗦两句。我们都知道Promise是一个立即执行函数，但是他的成功（或失败：reject）的回调函数resolve却是一个异步执行的回调。当执行到resolve()时，这个任务会被放入到回调队列中，等待调用栈有空闲时事件循环再来取走它。
+明白了这两个事情后，我还要再啰嗦两句。我们都知道Promise是一个立即执行函数，但是他的成功（或失败：reject）的回调函数resolve却是一个异步执行的回调。**当执行到resolve()时，这个任务会被放入到回调队列中，等待调用栈有空闲时事件循环再来取走它。**
 
 #### 终于进入正文：解题 ####
 
-好了铺垫完这些概念，我们回过头看上面那道题目（建议一边对着题目一边看解析我怕我讲的太快你跟不上啊哈哈😂）。
+好了铺垫完这些概念，我们回过头看上面那道题目困惑的那两句关键的地方（建议一边对着题目一边看解析我怕我讲的太快你跟不上啊哈哈😂）。
 
 执行到 async1 这个函数时，首先会打印出“async1 start”（这个不用多说了吧，async 表达式定义的函数也是立即执行的）；
 
@@ -108,13 +131,15 @@ MDN是这样描述await的：
 
 后面的事情相信你已经猜到了，没错调用栈再次空出来了，事件循环就取到了下一个任务：**历经千辛万苦终于轮到的那个Promise的resolve回调！！！**执行它（啥也不会打印的，因为 async2 并没有return东西，所以这个resolve的参数是undefined），此时 await 定义的这个 Promise 已经执行完并且返回了结果，所以可以继续往下执行 async1函数 后面的任务了，那就是“console.log('async1 end')”。
 
+谜之困惑的那两句执行结果（“promise2”、“async1 end”）就是这样来的～
+
 ### 总结 ###
 总结下来这道题目考的，其实是以下几个点：
 
 1. 调用栈
 1. 事件循环
 1. 任务队列
-1. promise的回调函数
+1. promise的回调函数执行
 1. async表达式的返回值
 1. await表达式的作用和返回值
 
@@ -129,4 +154,5 @@ MDN是这样描述await的：
 资料参考：<br>
 [https://segmentfault.com/a/1190000011296839]()<br>
 [https://github.com/xitu/gold-miner/blob/master/TODO/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with.md]()
+
 
