@@ -11,7 +11,7 @@ update: 2018-05-27
 
 
 故事要从一道今日头条的笔试题说起～ <br>
-题目来源：[https://juejin.im/post/5b03e79951882542891913e8]()
+题目来源：[https://juejin.im/post/5b03e79951882542891913e8](https://juejin.im/post/5b03e79951882542891913e8)
 
 ```
 async function async1(){
@@ -152,7 +152,7 @@ promise2
 关于async和await的执行顺序[这里](https://segmentfault.com/a/1190000011296839)也有很详细的分析可以参考～
 
 资料参考：<br>
-[https://segmentfault.com/a/1190000011296839]()<br>
-[https://github.com/xitu/gold-miner/blob/master/TODO/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with.md]()
+[https://segmentfault.com/a/1190000011296839](https://segmentfault.com/a/1190000011296839)<br>
+[https://github.com/xitu/gold-miner/blob/master/TODO/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with.md](https://github.com/xitu/gold-miner/blob/master/TODO/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with.md)
 
 
